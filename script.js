@@ -11,6 +11,7 @@ const goBackToGame = document.getElementById("go-back-to-game");
 const goToGame = document.getElementById("go-to-game");
 const gameOver = document.getElementById("game-over");
 const gameInstructions = document.getElementById("game-instructions");
+const soundIcon = document.getElementsByClassName("sound-icon").item(0);
 
 // Constant values
 const width = grid.clientWidth / 20;
@@ -48,6 +49,7 @@ let gamePaused = true;
 let totalScore = 0;
 let direction = 1;
 let appleIdx = -1;
+let soundOff = false;
 
 // Initialize the game
 initializeGame();
@@ -203,6 +205,7 @@ function updateBodyImage(
 function registerEventHandlers() {
   startButton.addEventListener("click", startGame);
   pauseButton.addEventListener("click", pauseGame);
+  soundIcon.addEventListener("click", toggleSound);
   document.addEventListener("keydown", control);
   instructionsButton.addEventListener("click", () => {
     toggleDisplay(gameInstructions);
@@ -253,6 +256,15 @@ function pauseGame() {
       clearInterval(timerId);
     }
   }
+}
+
+function toggleSound() {
+  soundIcon.classList.toggle("fa-volume-mute");
+  soundIcon.classList.toggle("fa-volume-up");
+  soundOff = !soundOff;
+  crashSound.muted = soundOff;
+  munchingSound.muted = soundOff;
+  winSound.muted = soundOff;
 }
 
 function startGame() {

@@ -38,6 +38,7 @@ button:hover {
 
 #instructions-button {
   margin-top: var(--inter-margin);
+  margin-right: var(--inter-margin);
 }
 
 #start-button {
