@@ -1,5 +1,7 @@
 # Sanke Game
 
+## Technologies
+
 This game was created using HTML, CSS, and vanilla JavaScript only.
 
 ## Game Instructions
