@@ -1,0 +1,180 @@
+@import url(./variables.css);
+body {
+  color: var(--heading-color);
+  background-image: var(--background);
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", Arial,
+    sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Typography */
+h1,
+h2 {
+  margin: var(--inter-margin);
+}
+
+/* Buttons */
+button {
+  background: var(--heading-color);
+  color: var(--button-background);
+  margin-bottom: var(--inter-margin);
+  width: var(--button-width);
+  border-radius: var(--button-border-radius);
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+button:hover {
+  background: var(--button-background);
+  color: var(--heading-color);
+}
+
+#instructions-button {
+  margin-top: var(--inter-margin);
+}
+
+#start-button {
+  margin-right: var(--inter-margin);
+}
+
+/* Layout */
+.grid {
+  width: var(--grid-width);
+  height: var(--grid-height);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid #000;
+}
+
+#game-over-modal,
+#game-instructions-modal {
+  background: var(--modal-background);
+  max-width: var(--modal-max-width);
+  height: var(--modal-height);
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  top: 30%;
+}
+
+#game-instructions-modal {
+  height: var(--game-instructions-height);
+}
+.instructions {
+  color: var(--paragraph-color);
+  text-align: justify;
+}
+
+#game-over,
+#game-instructions {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* the grid is composed of 15 by 15 div elements (squares) */
+.square-light,
+.square-dark {
+  width: var(--square-width);
+  height: var(--square-height);
+  background: var(--square-light);
+}
+
+.square-dark {
+  background: var(--square-dark);
+}
+
+/* Apple */
+.apple {
+  background-image: var(--apple);
+  background-size: cover;
+}
+
+/* Snake related images */
+.snake {
+  background-color: var(--snake-color);
+}
+
+.snake-body-horizontal {
+  background-image: var(--snake-body-horizontal);
+  background-size: cover;
+}
+
+.snake-body-vertical {
+  background-image: var(--snake-body-vertical);
+  background-size: cover;
+}
+
+.snake-head-down {
+  background-image: var(--snake-head-down);
+  background-size: cover;
+}
+
+.snake-head-left {
+  background-image: var(--snake-head-left);
+  background-size: cover;
+}
+
+.snake-head-right {
+  background-image: var(--snake-head-right);
+  background-size: cover;
+}
+
+.snake-head-up {
+  background-image: var(--snake-head-up);
+  background-size: cover;
+}
+
+.snake-tail-down {
+  background-image: var(--snake-tail-down);
+  background-size: cover;
+}
+
+.snake-tail-left {
+  background-image: var(--snake-tail-left);
+  background-size: cover;
+}
+
+.snake-tail-right {
+  background-image: var(--snake-tail-right);
+  background-size: cover;
+}
+
+.snake-tail-up {
+  background-image: var(--snake-tail-up);
+  background-size: cover;
+}
+
+.snake-body-bl {
+  background-image: var(--snake-body-bl);
+  background-size: cover;
+}
+
+.snake-body-br {
+  background-image: var(--snake-body-br);
+  background-size: cover;
+}
+
+.snake-body-tl {
+  background-image: var(--snake-body-tl);
+  background-size: cover;
+}
+
+.snake-body-tr {
+  background-image: var(--snake-body-tr);
+  background-size: cover;
+}

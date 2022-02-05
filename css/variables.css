@@ -1,0 +1,46 @@
+:root {
+  /**
+   * Color variables
+   */
+  --heading-color: #daa520;
+  --paragraph-color: #ffffff;
+  --modal-background: #05210b;
+  --button-background: #016f32;
+  --square-dark: #74d149;
+  --square-light: #aad751;
+  --snake-color: #5076f9;
+
+  /**
+   * Layout variables
+   */
+  --button-border-radius: 4px;
+  --button-width: 130px;
+  --inter-margin: 15px;
+  --grid-width: 300px;
+  --grid-height: 300px;
+  --square-width: 20px;
+  --square-height: 20px;
+  --modal-max-width: 300px;
+  --modal-height: 150px;
+  --game-instructions-height: 300px;
+
+  /**
+   * Images
+   */
+  --background: url("../images/background.jpg");
+  --apple: url("../images/apple.jpg");
+  --snake-body-bl: url("../images/body_bl.png");
+  --snake-body-br: url("../images/body_br.png");
+  --snake-body-tl: url("../images/body_tl.png");
+  --snake-body-tr: url("../images/body_tr.png");
+  --snake-body-horizontal: url("../images/body_horizontal.png");
+  --snake-body-vertical: url("../images/body_vertical.png");
+  --snake-head-down: url("../images/head_down.png");
+  --snake-head-left: url("../images/head_left.png");
+  --snake-head-right: url("../images/head_right.png");
+  --snake-head-up: url("../images/head_up.png");
+  --snake-tail-down: url("../images/tail_down.png");
+  --snake-tail-left: url("../images/tail_left.png");
+  --snake-tail-right: url("../images/tail_right.png");
+  --snake-tail-up: url("../images/tail_up.png");
+}
