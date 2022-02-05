@@ -76,6 +76,7 @@ function initializeGame() {
 
 function createGrid() {
   // Create a grid that consists of 15 by 15 squares
+  grid.innerHTML = "";
   let lightSquare = false;
   let count = 0;
 
