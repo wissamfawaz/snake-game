@@ -11,3 +11,7 @@ This game was created using HTML, CSS, and vanilla JavaScript only.
 3. Score depends on the number of apples eaten by the snake,
 4. Snake gains speed and size after eating an apple, and
 5. Game is won when the snake cannot grow anymore.
+
+## Game Preview
+
+![Game Preview](images/game_snippet.png)
