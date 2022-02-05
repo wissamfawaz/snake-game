@@ -17,7 +17,7 @@ const soundIcon = document.getElementsByClassName("sound-icon").item(0);
 const width = grid.clientWidth / 20;
 const totalSquares = width * width;
 const speedScalingFactor = 0.9;
-const initialUpdatePeriod = 1000; // Inter-update period in ms
+const initialUpdatePeriod = 500; // Inter-update period in ms
 const snakeBodyBlocks = [
   "snake-body-horizontal",
   "snake-body-vertical",
