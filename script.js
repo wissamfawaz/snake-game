@@ -14,10 +14,10 @@ const gameInstructions = document.getElementById("game-instructions");
 const soundIcon = document.getElementsByClassName("sound-icon").item(0);
 
 // Constant values
-const width = grid.clientWidth / 20;
+const width = 15; // 15 squares per row
 const totalSquares = width * width;
 const speedScalingFactor = 0.9;
-const initialUpdatePeriod = 500; // Inter-update period in ms
+const initialUpdatePeriod = 700; // Inter-update period in ms
 const snakeBodyBlocks = [
   "snake-body-horizontal",
   "snake-body-vertical",
@@ -76,7 +76,6 @@ function initializeGame() {
 
 function createGrid() {
   // Create a grid that consists of 15 by 15 squares
-  grid.innerHTML = "";
   let lightSquare = false;
   let count = 0;
 
