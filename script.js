@@ -529,16 +529,18 @@ function control(e) {
     let output = null;
     switch (pressedKey) {
       case "ArrowLeft":
-        if (prevDirectionValue !== 1) output = -1;
+        if (prevDirectionValue !== 1 && prevDirectionValue !== -1) output = -1;
         break;
       case "ArrowUp":
-        if (prevDirectionValue !== width) output = -width;
+        if (prevDirectionValue !== width && prevDirectionValue !== -width)
+          output = -width;
         break;
       case "ArrowRight":
-        if (prevDirectionValue !== -1) output = 1;
+        if (prevDirectionValue !== -1 && prevDirectionValue !== 1) output = 1;
         break;
       case "ArrowDown":
-        if (prevDirectionValue !== -width) output = width;
+        if (prevDirectionValue !== -width && prevDirectionValue !== width)
+          output = width;
     }
     return output;
   }
