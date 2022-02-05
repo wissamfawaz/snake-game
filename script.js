@@ -2,6 +2,7 @@
 const grid = document.querySelector(".grid");
 const scoreDisplay = document.querySelector("#score-display");
 const scoreDisplayModal = document.querySelector("#score-display-modal");
+const gameoverMessageModal = document.getElementById("gameover-message-modal");
 const highScoreDisplay = document.getElementById("high-score-display");
 const startButton = document.getElementById("start-button");
 const pauseButton = document.getElementById("pause-button");
@@ -32,6 +33,9 @@ const snakeBodyBlocks = [
   "snake-body-tl",
   "snake-body-tr",
 ];
+const crashSound = new Audio("sounds/crash.mp3");
+const munchingSound = new Audio("sounds/munch.wav");
+const winSound = new Audio("sounds/win.mp3");
 
 // State variables
 let highScore;
@@ -344,6 +348,7 @@ function move() {
   setSnakeDirection();
 
   if (isGameOver()) {
+    playCrashSound();
     takeGameOverActions();
     return;
   }
@@ -357,6 +362,8 @@ function move() {
   if (checkCollisionWithApple(newHeadSquare)) {
     // Remove the apple
     removeApple(newHeadSquare);
+
+    playAppleMunchingSound();
 
     // Make the snake grow after eating apple
     growSnake(tailSquareIdx);
@@ -400,6 +407,10 @@ function isGameOver() {
   return hitItself;
 }
 
+function playCrashSound() {
+  crashSound.play();
+}
+
 function containsSnakeBlock(targetSquare, includeTail) {
   for (let idx = 0; idx < snakeBodyBlocks.length; idx++) {
     const block = snakeBodyBlocks[idx];
@@ -413,11 +424,26 @@ function containsSnakeBlock(targetSquare, includeTail) {
 }
 
 function takeGameOverActions() {
+  const message = gameWon() ? "You won 🎉🎉!!" : "Game over!";
   updateHighScore();
   clearInterval(timerId);
   hidePauseButton();
   setScore(scoreDisplayModal, totalScore);
+  setModalMessage(gameoverMessageModal, message);
   toggleDisplay(gameOver);
+}
+
+function gameWon() {
+  if (currentSnake.length === totalSquares) {
+    winSound.play();
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function setModalMessage(modal, message) {
+  modal.textContent = message;
 }
 
 function updateHighScore() {
@@ -443,6 +469,10 @@ function addSnakeHead() {
 
 function checkCollisionWithApple(targetSquare) {
   return targetSquare.classList.contains("apple");
+}
+
+function playAppleMunchingSound() {
+  munchingSound.play();
 }
 
 function growSnake(targetSquareIdx) {
