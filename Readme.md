@@ -1,5 +1,9 @@
 # Sanke Game
 
+## Link to Game
+
+The game is playable at the following [webpage] (https://wissamfawaz.com/Games/SnakeGame/index.html)
+
 ## Technologies
 
 This game was created using HTML, CSS, and vanilla JavaScript only.
